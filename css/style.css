@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap");
 *{
     margin: 0;
-    padding:0;
+    padding: 0;
     box-sizing: border-box;
 }
 body{
@@ -16,19 +16,18 @@ h1{
     margin: auto;
     overflow: hidden;
 }
-header::before{
+header::after{
     content: "";
     display: block;
     margin-bottom: 80px;
 }
-
-/* ######## MENU DE NAVEGACION #########*/
+/* Menu de navegacion */
 nav{
     width: 100%;
     height: 80px;
     background-color: #FFFFFF;
     border-bottom: 1px solid transparent;
-    box-shadow: 1px 1px 0 rgba(red, green, blue, alpha) ;
+    box-shadow: 1px 1px 10px 0 rgba(0,0,0);
     position: fixed;
     top: 0;
     z-index: 100;
@@ -39,75 +38,72 @@ nav{
     width: 100%;
     align-items: center;
 }
-
-.enlaces-heider{
+.enlaces-header{
     font-weight: 300;
     margin: auto;
-    transition: all ease-in-out .6s;
+    transition: all ease-in-out;
 }
-.nav.enlaces-heider a {
-    color: #5d6678;
-    text-decoration: none;
-    margin-left:20px ;
-    padding: 12px;
-    border-radius: 10px;
+.nav .enlaces-header a{
+ color: #5D6678;
+ text-decoration:none;
+ margin-left: 20px;
+ padding: 12px;
+ border-radius: 10px;
 }
-.nav .enlaces-heider a:hover{
-    color: #fff;
+.nav .enlaces-header a:hover{
+    color: #FFF;
     background-color: #d03d3d;
     border-color: #d03d3d;
-    transition: all ease-in-out 6s;
+    transition: all ease-in-out .5s;
 }
-.titulospro{
-    text-align: left;
-    margin: 20px 0;
-
+.tiulospro{
+ text-align: left;
+margin: 20px 0;
 }
-.contenido-heider{
+.contenido-header{
     width: 80%;
     height: 600px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     text-align: center;
-    margin: o auto;
+    margin: 0 auto;
 }
-.contenido-header > img {
-    width: 300px;
-    height: 300px;
-    animation: ease-in animacion 0.5s;
-    margin-left: 50px;
+.contenido-header >img{
+ width: 300px;
+ height: 300px;
+ animation: ease-in animacion 0.5s;
+ margin-left: 50px;
 }
 @keyframes animacion{
     0%{
-        transform: scale(0);
-    } 
+      transform: scale(0);
+    }
     100%{
-        transform: scale(1);
+     transform: scale(1);
     }
 }
 .textos-header{
     margin: 0 0 0 30px;
-
 }
-
-.contenido-header p{
-    font-weight: 300 ;
-    margin: 14px;
-    color: #5d6678;
+.contenido-header{
+    font-weight: 300;
+    margin-top: 14px;
+    color: #5D6678;
     text-align: justify;
 }
-
-.contenido-heider a{
-    margin: 28px 0 0 0 ;
+.contenido-header a{
+    margin: 28px 0 0 0;
     width: 150px;
     display: inline-block;
     background-color: #d03d3d;
     text-align: center;
-    padding: 12pc 0;
+    color: white;
+    padding: 12px 0;
+    text-decoration: none;
     font-weight: 400;
     text-transform: uppercase;
     font-size: 16px;
     border-radius: 5px;
-    box-shadow: 0 8px 32px rgba(97, 31, 31, 0.46 );
+    box-shadow: 0 8px 32px rgba(97, 31, 31, 0.46);
 }
