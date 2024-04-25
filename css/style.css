@@ -17,7 +17,7 @@ h1{
     overflow: hidden;
 }
 header::after{
-    content: "";
+    content: " ";
     display: block;
     margin-bottom: 80px;
 }
@@ -30,25 +30,32 @@ nav{
     box-shadow: 1px 1px 10px 0 rgba(0,0,0);
     position: fixed;
     top: 0;
-    z-index: 100;
+    z-index:100;
+    
+    
 }
-.nav{
+.nav {
     display: flex;
     height: 80px;
     width: 100%;
     align-items: center;
+   
+    
 }
+
 .enlaces-header{
-    font-weight: 300;
+    font-weight: 300px;
     margin: auto;
     transition: all ease-in-out;
+    
 }
 .nav .enlaces-header a{
- color: #5D6678;
- text-decoration:none;
- margin-left: 20px;
- padding: 12px;
- border-radius: 10px;
+    color: #5D6678;
+    text-decoration:none;
+    margin-left: 20px;
+    padding: 12px;
+    border-radius: 10px;
+ 
 }
 .nav .enlaces-header a:hover{
     color: #FFF;
@@ -153,26 +160,36 @@ margin: 20px 0;
     
 /* Completar con la informacion en HTML */
 /* ################################## EXPERIENCIA ################################## */
+
 .experiencia {
+   
     background-color: #d03d3d;
     color: #fff;
+    
+    
+    
 }
 
+.experiencia>h1{
+    text-align: center;
+}
 .content-experience{
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap:wrap;
     margin-bottom: 50px;
     justify-content: space-around;
+   
 }
 
 .experience {
-    width: 100%;
+    width: 32%;
     border: 2px solid #fff;
-    border-radius: 5px;
+    border-radius: 5%;
     background-color: #f2f2f2;
     color: #565759;
     margin-top: 50px;
     padding: 20px;
+    
 }
 
 .experience:hover {
@@ -245,6 +262,9 @@ margin: 20px 0;
 .certificados {
     background: #f2f2f2;
      padding: 100px; 
+}
+.certificados>h1{
+    text-align: center;
 }
 
 .content-certificados {
