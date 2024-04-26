@@ -38,18 +38,19 @@ nav{
     display: flex;
     height: 80px;
     width: 100%;
+    justify-content: center;
     align-items: center;
    
     
 }
 
-.enlaces-header{
+.enlaces-heider{
     font-weight: 300px;
     margin: auto;
     transition: all ease-in-out;
-    
+
 }
-.nav .enlaces-header a{
+.nav .enlaces-heider a{
     color: #5D6678;
     text-decoration:none;
     margin-left: 20px;
@@ -57,7 +58,7 @@ nav{
     border-radius: 10px;
  
 }
-.nav .enlaces-header a:hover{
+.nav .enlaces-heider a:hover{
     color: #FFF;
     background-color: #d03d3d;
     border-color: #d03d3d;
@@ -129,6 +130,7 @@ margin: 20px 0;
     flex-wrap: wrap;
     margin-bottom: 50px;
     justify-content: space-around;  
+    border-radius: 5px;
 }
 .articulo{
     width: 30%;
@@ -163,10 +165,12 @@ margin: 20px 0;
 
 .experiencia {
    
-    background-color: #d03d3d;
-    color: #fff;
-    
-    
+    background-color: #f2f2f2;
+    color: #000;
+    padding: 1%;
+    margin-bottom: 30px;
+    border-radius: 5px;
+    margin-top: 30px;
     
 }
 
@@ -176,24 +180,25 @@ margin: 20px 0;
 .content-experience{
     display: flex;
     flex-wrap:wrap;
-    margin-bottom: 50px;
     justify-content: space-around;
    
 }
 
 .experience {
     width: 32%;
-    border: 2px solid #fff;
     border-radius: 5%;
-    background-color: #f2f2f2;
+    background-color: #fff;
     color: #565759;
     margin-top: 50px;
     padding: 20px;
+    transition: 0.3s all ease-in-out;
     
 }
 
 .experience:hover {
     box-shadow: 0 4px 10px rgba(17, 29, 48, .26);
+    background-color: #d03d3d;
+    color: #fff;
 }
 
 .experience img {
@@ -211,18 +216,33 @@ margin: 20px 0;
 
 
 /* ################################## SKILLS ################################## */
-.content-skills {
-    display: flex; 
-    flex-wrap: wrap; 
-    margin-top: 50px;
-    justify-content: space-evenly; 
-}
-.skills {
-    width: 100%;
-    margin-bottom: 70px;
-    transition: 0.5s;
+
+.skills-content {
     text-align: center;
     background-color: #f2f2f2;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+.content-skills {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    grid-auto-rows: minmax(100px, auto);
+}
+
+.content-skills-segundo {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+}
+
+.skills {
+    width: auto;
+    transition: 0.5s;
+    text-align: center;
+    background-color: #fff;
+    margin: 20px;
     padding: 20px;
     border-radius: 5px;
 }
@@ -251,17 +271,23 @@ margin: 20px 0;
     transform: rotate(360deg);
 }
 
-.skills:hover {
+.skills:hover  {
     box-shadow: 0 4px 10px rgba(17, 29, 48, .26);
-    color: #fff;
     background: #d03d3d;
     transition: .5s;
 }
 
+.skills:hover h2 {
+    color: #fff;
+}
+
+
 /* ################################## CERTIFICADOS ################################## */
 .certificados {
     background: #f2f2f2;
-     padding: 100px; 
+    padding: 20px; 
+    border-radius: 5px;
+    margin-bottom: 30px;
 }
 .certificados>h1{
     text-align: center;
@@ -276,7 +302,6 @@ margin: 20px 0;
 
 .certificate {
     background-color: #fff;
-    border: 1px solid #fff;
     border-radius: 5px;
     width: 22%;
     padding: 15px;
