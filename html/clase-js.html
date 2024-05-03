@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprendiendo Js</title>
+</head>
+<body onload="load_page()">
+    <div>
+        <div>
+            <label for="name">Name:</label>
+            <input type="text" id="name" autocomplete="off">
+
+        </div>
+        <div>
+            <label for="las_name">Last Name:</label>
+            <input type="text" id="las_name" autocomplete="off">
+            <!-- el for y el id deben ser iguales -->
+        </div>
+        <div><button id="send" onclick="send_form()">ENVIAR</button>
+        </div>
+        <div id="print"></div>
+    </div>
+
+    <!-- <script>
+        alert("HOLA MUNDO")
+        
+    </script> -->
+    <!-- CDN es descargado de manera local "el enlace se copia en google y se descarga" y se enruta.   sino directo desde sweertalert2 "el enlace se copia"-->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../js/functions.js"></script>
+</body>
+</html>
