@@ -70,4 +70,3 @@ function send_form(){
         document.getElementById("print").innerText = "Su nombre es: " + name +" "+ last_name;
     }
 }
-
