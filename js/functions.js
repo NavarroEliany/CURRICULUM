@@ -12,7 +12,7 @@
 // VARIABLES Y TIPOS DE DATOS
 const pi  = 3.14; //decimal
 const pul = 2.54;
-var name  = "Wilder Duarte"; //string
+var name  = "Eliany Navarro"; //string
 let edad  = 32; //entero
 var ver   = true; //boolean
 let fal   = false; //boolean
