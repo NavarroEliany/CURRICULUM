@@ -29,5 +29,17 @@
     <!-- CDN es descargado de manera local "el enlace se copia en google y se descarga" y se enruta.   sino directo desde sweertalert2 "el enlace se copia"-->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="../js/functions.js"></script>
+    <br><br>
+    <div>
+        <div id="text"></div>
+        <div><button onclick="action()">Calcular</button></div>
+        <div id="result"></div>
+    </div>
+    <div>
+        <button onclick="agregar()">AGREGAR</button>
+        <input type="text" id="num" size="1" placeholder="Num">
+        <button onclick="eliminar()">ELIMINAR</button>
+    </div>
+    <div><input type="text" id="impresion" disabled></div>
 </body>
 </html>
