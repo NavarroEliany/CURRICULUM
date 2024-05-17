@@ -9,10 +9,12 @@
 //     icon: "error"
 //   });
 
+const { default: Swal } = require("sweetalert2");
+
 // VARIABLES Y TIPOS DE DATOS
 const pi = 3.14; //Cons: se aplica a valores que no van a cambiar (DECIMAL)
 const ul = 2.54; 
-var name = "Karen Marcela"; //var: variables globales, se puede utilizar en todo el código (STRING)
+var name = "Eliany"; //var: variables globales, se puede utilizar en todo el código (STRING)
 let edad = 17; //valores que van a cambiar (ENTERO)
 var ver = true; //BOOLEAN
 let fal = false; //BOOLEAN
@@ -36,7 +38,7 @@ console.log(var_uno%var_dos);
 console.log("Mi edad es: "+edad);
 
 //EVENTO
-function load_page(){
+function l_page(){
     Swal.fire({
         imageUrl: "https://ufpso.edu.co/administradoru15/ventana/banner%20Admitidos_Mesa%20de%20trabajo%201%20(3)%20(1).jpg",
         // imageHeight: 1500,
@@ -47,16 +49,20 @@ function load_page(){
 
       document.getElementById("text").innerText = "El array a calcular es: "+array_num; 
       document.getElementById("impresion").value = array_num; 
+      document.getElementById(name_search).value=nombre_form;
 }
 function send_form(){
     let name      = document.getElementById("name").value;
     let last_name = document.getElementById("last_name").value;
-    if(name.length == 0 || last_name.length == 0){
+    let pass_one  = document.getElementById("pass_one").value;
+    let pass_two  = document.getElementById("pass_two").value;
+    if(name.length == 0 || last_name.length == 0 | pass_one.length == 0 | pass_two.length == 0){
         Swal.fire({
             title: "Cajas de texto vacías",
             text: "Algunas cajas de texto se encuentran vacías",
             icon: "error"
         });
+
           if(name.length == 0){
             document.getElementById("name").style.border = "2px solid red"
           }
@@ -71,6 +77,14 @@ function send_form(){
           }
          
     }
+
+    else if(oass_one != pass_two){
+      Swal.fire({
+        title: "Sus contraseñas no son iguales",
+        text: "Por favor valide sus credenciales",
+        icon: "error"
+    });
+    }
     else{
         document.getElementById("print").innerText = "Su nombre es: "+name+" "+last_name;
         document.getElementById("name").style.border = "2px solid green";
@@ -80,21 +94,21 @@ function send_form(){
 
 //ARRAYS
 var array_semana = ["Lunes", "Martes", "Mièrcoles", "Jueves", "Viernes", "Sabado", "Domingo"]
-var array_gra1= [1,2,2.5,"abc","Soy Karen"]
+var array_gra1= [1,2,2.5,"abc","Soy Eliany"]
 var array_num= [1,2,3,4,5,6,7,8,9];
 
 var array_multi = [
-  {name: "Karen" , age: 17, color: "Rojo"},
-  {name: "Karol" , age: 18, color: "Blanco"},
-  {name: "Daniela" , age: 20, color: "Negro"},
-  {name: "Andrey" , age: 24, color: "Verde"}
+  {name: "Eliany" , age: 17, color: "Rojo"},
+  {name: "Sofia" , age: 9, color: "Blanco"},
+  {name: "Santiago" , age: 9, color: "Negro"},
+  {name: "Shaireth" , age: 15, color: "Verde"}
 ];
 
 var json_ejem = {
-  name: "Karen",
-  lasname: "Bayona",
-  phone :"3143926679" ,
-  email: "kmbayonam@ufpso.edu.co"
+  name: "Eliany",
+  lasname: "Navarro",
+  phone :"3132307459" ,
+  email: "elanavarrob@ufpso.edu.co"
 };
 
 console.log(array_semana);
@@ -172,4 +186,16 @@ function limpiar(){
   document.getElementById("name").value = "";
   document.getElementById("last_name").value = "";
   document.getElementById("result").innerText= "";
+}
+
+var nombre_form = "ELIANY NAVARRO";
+
+function search(){
+  let nombre_buscar  =document.getElementById(name_search).value;
+
+  Swal.fire (nombre_buscar.toLowerCase()); //toUpperCase() mayurscula
+
+  Swal.fire(nombre_buscar.charAt(0));
+  let word = nombre_buscar.indexOf('E');
+  Swal.fire(word+"");
 }
