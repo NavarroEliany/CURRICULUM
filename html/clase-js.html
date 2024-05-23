@@ -7,33 +7,37 @@
 </head>
 <!-- ONLOAD: Evento , LOAD_PAGE:Función -->
 <body onload="load_page()"> 
-    <div>
+    <div> 
+        <!-- Para la hora del sistema -->
+        <input type="text " id="hour_system" disabled> 
         <input type="text" id="name_search" size="30" disabled>
-       <button onclick="search">BUSCAR</button>
+        <button onclick="search()">Buscar</button>
     </div>
     <br><br>
+
     <div >
-       
         <div>
             <label for="name">Name: </label>
             <input type="text" id="name" autocomplete="off" placeholder="Ingrese su nombre">
         </div>
+        <br>
         <div>
             <label for="last_name">Lastname: </label>
             <input type="text" id="last_name" placeholder="Ingrese su apellido">
         </div>
-    </div>
-    <div>
-
+        <br>
         <div>
-            <label for="pass_one">Ingrese su contraseña</label>
+            <label for="pass_one">Ingrese contraseña</label>
             <input type="password" id="pass_one" placeholder="Ingrese su contraseña">
         </div>
+        <br>
         <div>
             <label for="pass_two">Repita su contraseña</label>
             <input type="password" id="pass_two" placeholder="Repita su contraseña">
         </div>
-
+    </div>
+    <br>
+    <div>
         <button id="send" onclick="send_form()">ENVIAR</button>
     </div>
     <div id="print"></div>
