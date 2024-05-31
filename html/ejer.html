@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            pad: 0;
+        }
+        body{
+            display: flex;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+        }
+        .container{
+            background-color: #f398ff;
+            height: 400px;
+            width: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 20px;
+            box-shadow: 0 0 5px rgb(162, 0, 255);
+        }
+        form{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 20px;
+        }
+        input.error{
+            border: 2px solid red;
+            color: red;
+            font-weight: 300;
+        }
+        label.error{
+            color: rgb(143, 24, 255);
+            margin-top: 1px;
+            display: block;
+            font-size: 14px;
+
+        }
+    </style>
+</head>
+<body onload="load_page()">
+    <div class="container">
+        <form id="form_validate">
+            <h3>FORMULARIO DE DATOS</h3>
+            <div class="row">
+                <label for="">Nombres:</label>
+                <input type="text" id="name" name="name">
+            </div>
+            <div class="row">
+                <label for="">Apellidos:</label>
+                <input type="text" id="apellido" name="apellido">
+            </div>
+            <div class="row">
+                <label for="">Email:</label>
+                <input type="email" id="correo" name="correo">
+            </div>
+            <div class="row">
+                <label for="">Telefono:</label>
+                <input type="text" id="telefono" name="telefono">
+            </div>
+            <button type="button" id="enviar" onclick="salida()">Enviar</button>
+            <div class="row">
+                <h4 id="entrada"></h4>
+                <h4 id="salida"></h4>
+                <h4 id="diferencia"></h4>
+            </div>
+        </form>
+        
+    </div>
+  
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script>
+        $(document).ready(function(){
+           $("#form_validate").validate({
+                rules:{
+                    name: {required: true, minlength:3},
+                    apellido: {required: true, minlength:3},
+                    correo:{required: true, email:true},
+                    telefono: {required: true, number:true, minlength:10, maxlength:10}
+                },
+                messages: {
+                    name:{
+                        required: "El campo es requerido",
+                        minlength: "Minimo escriba 3 caracteres"
+                    },
+                    apellido:{
+                        required: "El campo es requerido",
+                        minlength: "Minimo escriba 3 caracteres"
+                    
+                    },
+                    correo: {
+                        required: "El campo es requerido",
+                        minlength: "El campo debe ser: jejemplo@campo.com"
+                    },
+                    telefono:{
+                        required: "El campo es requerido",
+                        minlength: "El tamaño debe seer de 10 caracteres",
+                        maxlength: "El tamaño debe seer de 10 caracteres",
+                        number: "Dijite solo numeros"
+                    }
+                }
+            });
+        $("#enviar").click(function(){
+            if($("#form_validate").valid()){
+                alert("LOS CAMPOS ESTAN BIEN");
+            } 
+            else{
+            //     swal.fire({
+            //         title:"Hay campos por dilegenciar",
+            //         icon: "error",
+            //         timer:1500,
+            //         showConfirmButton: false
+            //     })
+            }
+           });
+        });
+
+        var hora_inicial
+
+        function load_page(){
+            hora_inicial = new Date();
+            document.getElementById("entrada").innerText=hora_inicial;
+        }
+
+        function salida(){
+            let hora_salida =new Date();
+            document.getElementById("salida").innerText=new Date();
+            
+            let diferencia = hora_salida - hora_inicial;
+            let dif_seg = Math.floor (diferencia/1000);
+            let dif_min = Math.floor (dif_seg/60);
+            let dif_hor = Math.floor (dif_min/60);
+
+            let seg_restantes = dif_seg %60;
+            let min_restantes = dif_min %60;
+
+            let resultado = "Diferencia: " + dif_hor+ ":" + min_restantes + ":" + seg_restantes
+            
+            Swal.fire (""+ resultado);
+
+            document.getElementById("diferencia").innerText= resultado;
+        }
+    </script>
+    <!-- El tipo date para areglar la horas e iria en la funcion de load_page -->
+</body>
+</html>
