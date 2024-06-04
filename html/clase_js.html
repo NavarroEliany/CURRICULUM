@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio-js</title>
+    <style>
+        body{
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+
+        }
+        .container{
+            height: 500px;
+            width: 400px;
+            border-radius: 20px;
+            border: 2px solid rgb(255, 162, 247);
+            box-shadow: 0 0 10px rgb(255, 127, 227);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <input type="text" id="caja_uno">
+            <input type="text" id="caja_dos">
+            <!-- <input type="text" name="" id="caja_tres">
+            <input type="text" name="" id="caja_cuatro"> -->
+        </div>
+        <h3>ZONA DE IMPRESIÓN</h3>
+        <div id="print_name"></div>
+        <label id="cant"></label>
+        <div id="print"></div>
+        <button onclick="enviar()">ENVIAR</button>
+    </div>
+
+    <script>
+        function enviar(){
+            let caja_uno = document.getElementById ("caja_uno").value.trim();
+            let caja_dos = document.getElementById ("caja_dos").value.trim();
+            // let caja_tres = document.getElementById ("caja_tres").value.trim();
+            // let caja_cuatro = document.getElementById ("caja_cuatro").value.trim();
+            let concat = caja_uno + caja_dos; //+ caja_tres + caja_cuatro;
+
+            // let cadena="";
+            
+            // for(let i=1; i<=20; i++){
+            //     // cadena+= "${concat.length} × ${i}= ${concat.length*1}\n";
+            //     cadena+= concat.lenght +"×" +i+ "=" + (concat.lenght);
+            // }
+            // document.getElementById("print").innerText=cadena;
+
+                // let cadena ="";
+                // for (let i=0; i<concat.length; i++){
+                //     let letter =concat.charAt (i);
+                //     cadena +=
+                // }
+
+                // Lo comentado es para crear la multiplicacion
+
+            let palabra="";
+            
+
+            document.getElementById("print_name").innerText = caja_uno.toUpperCase()  + caja_dos.toUpperCase() + caja_tres.toUpperCase() + caja_cuatro.toUpperCase();
+            document.getElementById("cant").innerText = "Tiene " + concat.length + " caracteres";
+
+            let cadena="";
+            for(let i= caja_uno; i<caja_dos; i++){
+                if(i%2==0){
+                    cadena+=i+ "es par"+ "\n";
+                }
+            }
+            document.getElementById("print").innerText=cadena;
+
+        }
+// HACER EN CASA QUE EN UN LADO APAREZCAN LOS PARES Y EN EL OTRO LOS IMPARES
+// TAMBIEN QUE EL LETRERO DE H3 APAREZCA CUANDO YA LE DE ENVIAR
+// Y TAMBIEN QUE CUANDO YA ENVIE Y ME SALGA EL RESULTADO APAREZCA UN BOTON PARA LIMPIAR
+// PROPIEDAD .HIDDEN 
+//HACER DOS CAJAS DE TEXTO RECORRER LO QUE SE ESCRIBE EN EL EN LA PRIMERA CAJA Y QUE EN LA SEGUNDA CAJA SE COLOQUE UNA LETRA DE LA PALABRA ESCRITA EN LA PRIMERA Y QUE SE MUESTRE 
+    // EN QUE POSICION SE ENCUENTRA DICHA LETRA Y TAMBIÉN QUE   APAREZCA LA PALABRA SIN LA LETRA 
+    </script>
+</body>
+</html>
